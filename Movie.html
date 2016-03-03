@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Movies!</title>
+	<style type="text/css">
+		button, div, form, input {
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Movies!</h1>
+
+  <div id="moviesView">
+
+  </div>
+  
+ 
+
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+	var movies = ['The Matrix', 'The Notebook', 'Mr. Nobody', 'The Lion King'];
+
+	for (var i = 0; i < movies.length; i++){
+
+		/*
+			Write code between the dashes below to 
+				* make a button	
+					* give the button a class of movie
+					* set the data-name attribute of the button to movie name
+					* set the text of the button to the movie name 
+				* append the button to moviesView
+		*/
+
+		//------YOUR CODE GOES IN THESE DASHES
+		// Creates a variable holder that is holding the button
+		var a = $('<button>');
+		//Attach a classname of "movie", data-name attached, button
+		a.addClass('movie');
+		a.attr('data-name', movies[i]);
+		a.text(movies[i]);
+		$('#moviesView').append(a);
+
+	    //------  
+	    $('#addMovie').on('click', function(){
+		/*
+			Write code between the dashes below to 
+				* grab the value from the input with an id of movie-input
+					* trim the value with the trim function (look it up if you don't know how to use it)
+					* push the value into the movies array
+					* run the above for loop again (literally copy and paste it)
+		*/
+
+		//------YOUR CODE GOES IN THESE DASHES
+		var allInputs = $( ":input" );
+		var formChildren = $( "form > *" );
+		$( "#messages" ).text( "Found " + allInputs.length + " inputs and the form has " + formChildren.length + " children." );
+ 
+		$( "form" ).submit(function( event ) {
+  		event.preventDefault();
+	});
+		//------ 
+		
+		return false; //prevents the page from going anywhere (confused? comment this line out, submit it and watch what the browser does.)
+	});
+ 
+
+	}
+
+
+</script>
+
+
+</body>
+</html>
